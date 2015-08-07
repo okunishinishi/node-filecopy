@@ -1,0 +1,22 @@
+/**
+ * Bud file for README
+ */
+
+"use strict";
+
+var pkg = require('./package.json');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        pkg: pkg,
+        links: {
+            'GitHub Pages': 'https://pages.github.com/'
+        }
+    }
+};
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}
