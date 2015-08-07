@@ -1,7 +1,7 @@
 {
   "name": "filecopy",
-  "version": "1.0.1",
-  "description": "Copy files",
+  "version": "1.0.2",
+  "description": "Copy files.",
   "main": "filecopy.js",
   "scripts": {
     "build": "./ci/build.js",

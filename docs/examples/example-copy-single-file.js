@@ -1,8 +1,4 @@
-/**
- * This is an example to copy a single file.
- */
-
-"use strict";
+#!/usr/bin/env/node
 
 var filecopy = require('filecopy');
 

@@ -1,14 +1,8 @@
-/**
- * This is an example to copy a multiple file.
- */
-
-"use strict";
+#!/usr/bin/env node
 
 var filecopy = require('filecopy');
 
 // Copy all files in src directory to dir.
-filecopy('src/*.txt', 'dest', {
-
-}, function(err){
+filecopy('src/*.txt', 'dest', {}, function (err) {
     /*...*/
 });

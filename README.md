@@ -6,7 +6,7 @@ filecopy
 [![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
 [![npm version][my_npm_budge_url]][my_npm_url]
 
-Copy files
+Copy files.
 
 
 Usage
@@ -15,11 +15,7 @@ Usage
 ### Copy a signle file.
 
 ```javascript
-/**
- * This is an example to copy a single file.
- */
-
-"use strict";
+#!/usr/bin/env/node
 
 var filecopy = require('filecopy');
 
@@ -34,18 +30,12 @@ filecopy('src/some-text01.txt', 'dest/some-text01-copy.txt', {
 ### Copy multiple files.
 
 ```javascript
-/**
- * This is an example to copy a multiple file.
- */
-
-"use strict";
+#!/usr/bin/env node
 
 var filecopy = require('filecopy');
 
 // Copy all files in src directory to dir.
-filecopy('src/*.txt', 'dest', {
-
-}, function(err){
+filecopy('src/*.txt', 'dest', {}, function (err) {
     /*...*/
 });
 
@@ -68,7 +58,6 @@ This software is released under the [MIT License][my_license_url].
 Links
 ------
 
-+ [GitHub Pages](https://pages.github.com/)
 
 
 [npm_url]: https://www.npmjs.org/
