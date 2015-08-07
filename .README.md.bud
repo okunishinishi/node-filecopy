@@ -11,9 +11,7 @@ module.exports = {
     mode: '444',
     data: {
         pkg: pkg,
-        links: {
-            'GitHub Pages': 'https://pages.github.com/'
-        }
+        links: {}
     }
 };
 
