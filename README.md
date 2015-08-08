@@ -45,7 +45,7 @@ npm install filecopy --save
 Usage
 ----
 
-### Copy a single file.
+### Copy a single file
 
 ```javascript
 #!/usr/bin/env/node
@@ -60,7 +60,7 @@ filecopy('src/some-text01.txt', 'dest/some-text01-copy.txt', {
 
 ```
 
-### Copy multiple files.
+### Copy multiple files
 
 ```javascript
 #!/usr/bin/env node
