@@ -13,7 +13,7 @@
 var argx = require('argx'),
     async = require('async'),
     path = require('path'),
-    glob = require('glob'),
+    expandglob = require('expandglob'),
     mkdirp = require('mkdirp'),
     fs = require('fs');
 
@@ -30,7 +30,7 @@ function filecopy(src, dest, options, callback) {
     }
     async.waterfall([
         function (callback) {
-            async.concatSeries([].concat(src), glob, callback);
+            expandglob(src, callback);
         },
         function (src, callback) {
             _isExistingDir(dest, function (destIsDir) {
