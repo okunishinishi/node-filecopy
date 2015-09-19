@@ -6,16 +6,13 @@
 
 "use strict";
 
-var path = require('path'),
-    apeTasking = require('ape-tasking'),
+process.chdir(__dirname + '/..');
+
+var apeTasking = require('ape-tasking'),
     apeTesting = require('ape-testing');
 
-var basedir = path.resolve(__dirname, '..');
-
-process.chdir(basedir);
-
 apeTasking.runTasks('test', [
-    function (callback) {
-        apeTesting.runNodeunit('*_test.js', callback);
+    function runNodeunit(callback) {
+        apeTesting.runNodeunit('test/*_test.js', callback);
     }
 ], true);

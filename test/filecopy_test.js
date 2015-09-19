@@ -5,7 +5,7 @@
 
 "use strict";
 
-var filecopy = require('./filecopy.js'),
+var filecopy = require('../lib/filecopy.js'),
     path = require('path'),
     mkdirp = require('mkdirp'),
     fs = require('fs');

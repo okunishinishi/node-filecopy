@@ -17,7 +17,9 @@ process.chdir(basedir);
 apeTasking.runTasks('build', [
     function (callback) {
         coz.render([
-            '.*.bud'
+            '.*.bud',
+            'lib/.*.bud',
+            'test/.*.bud'
         ], callback);
     }
 ], true);
