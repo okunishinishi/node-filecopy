@@ -31,9 +31,10 @@ exports['Copy multiple files.'] = function (test) {
     filecopy(src, dest, {
             mkdirp: true
         },
-        function (err) {
+        function (err, results) {
             test.ok(fs.existsSync(dest + '/' + path.basename(__filename)));
             test.ifError(err);
+            test.ok(results);
             test.done();
         }
     )
