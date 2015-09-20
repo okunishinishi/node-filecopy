@@ -10,6 +10,21 @@ var filecopy = require('../lib/filecopy.js'),
     mkdirp = require('mkdirp'),
     fs = require('fs');
 
+exports['Copy a single file with permission.'] = function (test) {
+    var src = String(__filename),
+        dest = 'tmp/foo/bar/copy11.txt';
+    filecopy(src, dest, {
+            mkdirp: true,
+            mode: '444'
+        },
+        function (err) {
+            test.ok(fs.existsSync(dest));
+            test.ifError(err);
+            test.done();
+        }
+    )
+};
+
 exports['Copy a single file.'] = function (test) {
     var src = String(__filename),
         dest = 'tmp/foo/bar/copy01.txt';
