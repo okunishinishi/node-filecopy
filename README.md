@@ -66,13 +66,14 @@ Usage
 
 ```javascript
 #!/usr/bin/env/node
+'use strict'
 
-var filecopy = require('filecopy');
+const filecopy = require('filecopy')
 
 filecopy('src/some-text01.txt', 'dest/some-text01-copy.txt', {
-    mkdirp: true
-}, function(err){
-    /*...*/
+  mkdirp: true
+}).then(() => {
+  /* ... */
 });
 
 ```
@@ -81,13 +82,14 @@ filecopy('src/some-text01.txt', 'dest/some-text01-copy.txt', {
 
 ```javascript
 #!/usr/bin/env node
+'use strict'
 
-var filecopy = require('filecopy');
+const filecopy = require('filecopy')
 
 // Copy all files in src directory to dir.
-filecopy('src/*.txt', 'dest', {}, function (err) {
-    /*...*/
-});
+filecopy('src/*.txt', 'dest', {}).then(() => {
+  /* ... */
+})
 
 ```
 
