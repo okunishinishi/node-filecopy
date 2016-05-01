@@ -1,56 +1,47 @@
 /**
  * Test for filecopy.js
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 
-"use strict";
+'use strict'
 
-var filecopy = require('../lib/filecopy.js'),
-    path = require('path'),
-    mkdirp = require('mkdirp'),
-    fs = require('fs');
+const filecopy = require('../lib/filecopy.js')
+const path = require('path')
+const mkdirp = require('mkdirp')
+const fs = require('fs')
+const co = require('co')
+const assert = require('assert')
 
-exports['Copy a single file with permission.'] = function (test) {
-    var src = String(__filename),
-        dest = 'tmp/foo/bar/copy11.txt';
-    filecopy(src, dest, {
-            mkdirp: true,
-            mode: '444'
-        },
-        function (err) {
-            test.ok(fs.existsSync(dest));
-            test.ifError(err);
-            test.done();
-        }
-    )
-};
+describe('filecopy', () => {
+  it('Copy a single file with permission.', () => co(function * () {
+    let src = String(__filename)
+    let dest = 'tmp/foo/bar/copy11.txt'
+    yield filecopy(src, dest, {
+      mkdirp: true,
+      mode: '444'
+    })
+    assert.ok(fs.existsSync(dest))
+  }))
 
-exports['Copy a single file.'] = function (test) {
-    var src = String(__filename),
-        dest = 'tmp/foo/bar/copy01.txt';
-    filecopy(src, dest, {
-            mkdirp: true
-        },
-        function (err) {
-            test.ok(fs.existsSync(dest));
-            test.ifError(err);
-            test.done();
-        }
-    )
-};
+  it('Copy a single file.', () => co(function * () {
+    let src = String(__filename)
+    let dest = 'tmp/foo/bar/copy01.txt'
+    yield filecopy(src, dest, {
+      mkdirp: true
+    })
+    assert.ok(fs.existsSync(dest))
+  }))
 
-exports['Copy multiple files.'] = function (test) {
-    var src = String(__dirname) + '/*.js',
-        dest = 'tmp/foo/bar/baz';
-    mkdirp.sync(dest);
-    filecopy(src, dest, {
-            mkdirp: true
-        },
-        function (err, results) {
-            test.ok(fs.existsSync(dest + '/' + path.basename(__filename)));
-            test.ifError(err);
-            test.ok(results);
-            test.done();
-        }
-    )
-};
+  it('Copy multiple files.', () => co(function * () {
+    let src = String(__dirname) + '/*.js'
+    let dest = 'tmp/foo/bar/baz'
+    mkdirp.sync(dest)
+    let results = yield filecopy(src, dest, {
+      mkdirp: true
+    })
+    assert.ok(fs.existsSync(dest + '/' + path.basename(__filename)))
+    assert.ok(results)
+  }))
+})
+
+/* global describe, before, after, it */

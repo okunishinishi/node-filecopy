@@ -6,21 +6,15 @@
 
 "use strict";
 
-var path = require('path'),
-    apeTasking = require('ape-tasking'),
-    coz = require('coz');
+process.chdir(`${__dirname}/..`)
 
-var basedir = path.resolve(__dirname, '..');
-
-process.chdir(basedir);
+const apeTasking = require('ape-tasking')
+const coz = require('coz')
 
 apeTasking.runTasks('build', [
-    function (callback) {
-        coz.render([
-            '.*.bud',
-            'lib/.*.bud',
-            'test/.*.bud'
-        ], callback);
-    }
-], true);
-
+  () => coz.render([
+    '.*.bud',
+    'lib/.*.bud',
+    'test/.*.bud'
+  ])
+], true)

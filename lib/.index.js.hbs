@@ -4,14 +4,16 @@
  * @version {{pkg.version}}
  */
 
-"use strict";
+'use strict'
 
-var filecopy = require('./filecopy'),
-    pkg = require('../package.json');
+const filecopy = require('./filecopy')
+const pkg = require('../package.json')
 
-var lib = filecopy.bind(this);
+let lib = filecopy.bind(this)
 
-lib.filecopy = filecopy;
-lib.version = pkg;
+Object.assign(lib, {
+  filecopy,
+  version: pkg.version
+})
 
-module.exports = lib;
+module.exports = lib

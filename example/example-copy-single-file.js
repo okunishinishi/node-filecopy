@@ -1,9 +1,10 @@
 #!/usr/bin/env/node
+'use strict'
 
-var filecopy = require('filecopy');
+const filecopy = require('filecopy')
 
 filecopy('src/some-text01.txt', 'dest/some-text01-copy.txt', {
-    mkdirp: true
-}, function(err){
-    /*...*/
+  mkdirp: true
+}).then(() => {
+  /* ... */
 });
