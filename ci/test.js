@@ -4,7 +4,7 @@
  * Run tests.
  */
 
-"use strict";
+'use strict'
 
 process.chdir(`${__dirname}/..`)
 

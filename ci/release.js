@@ -4,7 +4,7 @@
  * Release this package.
  */
 
-"use strict";
+'use strict'
 
 process.chdir(`${__dirname}/..`)
 

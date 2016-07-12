@@ -4,7 +4,7 @@
  * Update project.
  */
 
-"use strict";
+'use strict'
 
 process.chdir(`${__dirname}/..`)
 
