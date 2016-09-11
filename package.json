@@ -1,6 +1,6 @@
 {
   "name": "filecopy",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Copy files.",
   "main": "shim/node",
   "scripts": {
@@ -40,7 +40,7 @@
     "injectmock": "^2.0.0"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=4",
+    "npm": ">=2"
   }
 }
