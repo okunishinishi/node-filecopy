@@ -1,8 +1,9 @@
 {
   "name": "filecopy",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Copy files.",
   "main": "shim/node",
+  "browser": false,
   "scripts": {
     "test": "node ./ci/test.js",
     "prepublish": "node ./ci/build.js && node ./ci/shim.js"
