@@ -32,4 +32,4 @@ node_modules
 
 tmp
 
-shim/node
+!shim/node

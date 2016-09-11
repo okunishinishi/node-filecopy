@@ -7,13 +7,11 @@
 'use strict'
 
 const filecopy = require('./filecopy')
-const pkg = require('../package.json')
 
 let lib = filecopy.bind(this)
 
 Object.assign(lib, {
-  filecopy,
-  version: pkg.version
+  filecopy
 })
 
 module.exports = lib
