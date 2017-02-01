@@ -1,6 +1,6 @@
 {
   "name": "filecopy",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Copy files.",
   "main": "lib",
   "browser": false,
