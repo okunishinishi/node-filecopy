@@ -1,12 +1,12 @@
 {
   "name": "filecopy",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Copy files.",
   "main": "lib",
   "browser": false,
   "scripts": {
     "test": "node ./ci/test.js",
-    "prepublish": "node ./ci/build.js"
+    "prepare": "node ./ci/build.js"
   },
   "repository": "okunishinishi/node-filecopy",
   "keywords": [
@@ -25,8 +25,8 @@
   "dependencies": {
     "aglob": "^2.0.1",
     "argx": "^3.0.0",
-    "asfs": "^1.2.2",
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "amocha": "^2.0.0",
