@@ -1,9 +1,11 @@
 {
   "name": "filecopy",
-  "version": "3.0.2",
+  "version": "4.0.1",
   "description": "Copy files.",
   "main": "lib",
-  "browser": false,
+  "browser": {
+    "lib": false
+  },
   "scripts": {
     "test": "node ./ci/test.js",
     "prepare": "node ./ci/build.js"
@@ -23,22 +25,21 @@
   },
   "homepage": "https://github.com/okunishinishi/node-filecopy#readme",
   "dependencies": {
-    "aglob": "^2.0.1",
+    "aglob": "^3.0.0",
     "argx": "^3.0.0",
-    "co": "^4.6.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
-    "amocha": "^2.0.0",
+    "amocha": "^3.0.0",
     "ape-releasing": "^4.0.2",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^5.0.20",
+    "ape-tmpl": "^6.0.0",
     "ape-updating": "^4.1.0",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0"
   },
   "engines": {
-    "node": ">=6",
+    "node": ">=7.6",
     "npm": ">=4"
   }
 }
