@@ -1,6 +1,6 @@
 {
   "name": "filecopy",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Copy files.",
   "main": "lib",
   "browser": {
